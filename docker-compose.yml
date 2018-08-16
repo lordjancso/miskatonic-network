@@ -1,0 +1,59 @@
+version: '2'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: miskatonic-network
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - /srv/data/mysql:/var/lib/mysql
+    command: mysqld --sql_mode=""
+
+  app:
+    hostname: docker-miskatonic-network
+    build:
+      context: ./etc/docker/dev/app
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  web:
+    image: nginx:1-alpine
+    depends_on:
+      - app
+    ports:
+      - 80:80
+    volumes:
+      - ./etc/docker/dev/web/default.conf:/etc/nginx/conf.d/default.conf
+    volumes_from:
+      - app
+
+  node:
+    image: node:10-alpine
+    depends_on:
+      - app
+    volumes_from:
+      - app
+    working_dir: /app
+    tty: true
+
+  redis:
+    image: redis:3
+
+  redis-commander:
+    image: tenstartups/redis-commander
+    command: --redis-host redis
+    depends_on:
+      - redis
+    ports:
+      - 8079:8081
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 8080:80
