@@ -18,6 +18,7 @@
         "dev-server-hot": "node_modules/.bin/encore dev-server --hot --port 9000 --host 0.0.0.0 --disable-host-check",
         "dev": "node_modules/.bin/encore dev",
         "watch": "node_modules/.bin/encore dev --watch",
-        "prod": "node_modules/.bin/encore production"
+        "prod": "node_modules/.bin/encore production",
+        "jscs": "jscs ./assets/js"
     }
 }

@@ -32,14 +32,14 @@ services:
       - app
 
   node:
-    image: node:10-alpine
+    build:
+      context: ./etc/docker/dev/node
     depends_on:
       - app
     ports:
       - 9000:9000
     volumes_from:
       - app
-    working_dir: /app
     tty: true
 
   redis:

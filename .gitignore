@@ -16,6 +16,7 @@
 ###< symfony/web-server-bundle ###
 
 /.idea/
+/.php_cs.cache
 
 ###> symfony/webpack-encore-pack ###
 /node_modules/
