@@ -35,6 +35,8 @@ services:
     image: node:10-alpine
     depends_on:
       - app
+    ports:
+      - 9000:9000
     volumes_from:
       - app
     working_dir: /app
