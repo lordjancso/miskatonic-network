@@ -57,11 +57,36 @@ main {
   border-radius: 12px;
   padding: 6px;
   clear: both;
+  min-width: 100px;
+  min-height: 134px;
+}
+
+#player-commit-1, #player-commit-2, #player-commit-3, #enemy-commit-1, #enemy-commit-2, #enemy-commit-3 {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 6px;
+  margin: 2px;
+  min-width: 134px;
+  min-height: 100px;
 }
 
 .card {
-  float: left;
   width: 80px;
   height: 114px;
   margin: 4px;
+}
+
+.card-active {
+}
+
+.card-passive {
+  margin-bottom: -28px;
+  transform-origin: left;
+  transform: translate(57px, 24px) rotate(-90deg);
+}
+
+.card-story {
+  width: 114px;
+  height: 80px;
+  margin: 4px 12px;
 }
