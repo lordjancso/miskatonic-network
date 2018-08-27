@@ -3,7 +3,7 @@
 {% block body %}
     <main role="main" class="container-fluid p-0">
         <div class="d-flex h-100">
-            <div class="col-sm-3 col-lg-2 p-0" style="background-color: red;">
+            <div class="col-sm-3 col-lg-2 p-0">
                 <div class="d-flex align-items-start flex-column h-100">
                     <div class="mb-auto w-100" style="background-color: grey;">
                         Enemy domain<br />Enemy domain<br />Enemy domain<br />Enemy domain<br />Enemy domain<br />Enemy domain
@@ -16,10 +16,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-lg-5 p-0" style="background-color: darkred;">
+            <div class="col-sm-3 col-lg-5 p-0">
                 <div class="d-flex align-items-start flex-column h-100">
-                    <div class="mb-auto w-100" style="background-color: green;">
-                        Enemy play area<br />Enemy play area<br />Enemy play area<br />Enemy play area<br />Enemy play area<br />Enemy play area
+                    <div class="mb-auto w-100" id="enemy-area">
+                        {% for i in 1..2 %}
+                            <div class="card">
+                                <img src="{{ asset('images/cards/shudde-mell-tgs.jpg') }}" class="img-fluid">
+                            </div>
+                        {% endfor %}
                     </div>
                     <div class="flex-grow-1 d-flex align-items-center w-100">
                         <div class="flex-column w-100">
@@ -34,12 +38,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-100" style="background-color: green;">
-                        Player play area<br />Player play area<br />Player play area<br />Player play area<br />Player play area<br />Player play area
+                    <div class="w-100" id="player-area">
+                        {% for i in 1..5 %}
+                            <div class="card">
+                                <img src="{{ asset('images/cards/cthuloid-spawn-som.jpg') }}" class="img-fluid">
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-lg-3 p-0" style="background-color: red;">
+            <div class="col-sm-3 col-lg-3 p-0">
                 <div class="d-flex align-items-start flex-column h-100">
                     <div class="mb-auto w-100" style="background-color: lightblue;">
                         Enemy decks<br />Enemy decks<br />Enemy decks<br />Enemy decks<br />Enemy decks<br />Enemy decks
@@ -52,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3 col-lg-2 p-0" style="background-color: darkred;">
+            <div class="col-sm-3 col-lg-2 p-0">
                 <div class="d-flex align-items-start flex-column h-100">
                     <div class="mb-auto w-100" style="background-color: grey;">
                         <img src="{{ asset('images/cards/aziz-chatuluka-tss.jpg') }}" class="img-fluid">
