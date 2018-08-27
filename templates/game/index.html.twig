@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main role="main" class="container-fluid p-0">
+        <div class="d-flex h-100">
+            <div class="col-sm-3 col-lg-2 p-0" style="background-color: red;">
+                <div class="d-flex align-items-start flex-column h-100">
+                    <div class="mb-auto w-100" style="background-color: grey;">
+                        Enemy domain<br />Enemy domain<br />Enemy domain<br />Enemy domain<br />Enemy domain<br />Enemy domain
+                    </div>
+                    <div class="mb-auto w-100" style="background-color: grey;">
+                        Control panel<br />Control panel<br />Control panel<br />Control panel<br />Control panel<br />Control panel
+                    </div>
+                    <div class="w-100" style="background-color: grey;">
+                        Player domain<br />Player domain<br />Player domain<br />Player domain<br />Player domain<br />Player domain
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-5 p-0" style="background-color: darkred;">
+                <div class="d-flex align-items-start flex-column h-100">
+                    <div class="mb-auto w-100" style="background-color: green;">
+                        Enemy play area<br />Enemy play area<br />Enemy play area<br />Enemy play area<br />Enemy play area<br />Enemy play area
+                    </div>
+                    <div class="flex-grow-1 d-flex align-items-center w-100">
+                        <div class="flex-column w-100">
+                            <div class="w-100" style="background-color: yellowgreen;">
+                                Enemy commit<br />Enemy commit<br />Enemy commit<br />Enemy commit<br />Enemy commit<br />Enemy commit
+                            </div>
+                            <div class="w-100" style="background-color: lightblue;">
+                                Story cards<br />Story cards<br />Story cards<br />Story cards<br />Story cards<br />Story cards
+                            </div>
+                            <div class="w-100" style="background-color: yellowgreen;">
+                                Player commit<br />Player commit<br />Player commit<br />Player commit<br />Player commit<br />Player commit
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100" style="background-color: green;">
+                        Player play area<br />Player play area<br />Player play area<br />Player play area<br />Player play area<br />Player play area
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-3 p-0" style="background-color: red;">
+                <div class="d-flex align-items-start flex-column h-100">
+                    <div class="mb-auto w-100" style="background-color: lightblue;">
+                        Enemy decks<br />Enemy decks<br />Enemy decks<br />Enemy decks<br />Enemy decks<br />Enemy decks
+                    </div>
+                    <div class="mb-auto w-100" style="background-color: cornflowerblue;">
+                        Player hand<br />Player hand<br />Player hand<br />Player hand<br />Player hand<br />Player hand
+                    </div>
+                    <div class="w-100" style="background-color: lightblue;">
+                        Player decks<br />Player decks<br />Player decks<br />Player decks<br />Player decks<br />Player decks
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3 col-lg-2 p-0" style="background-color: darkred;">
+                <div class="d-flex align-items-start flex-column h-100">
+                    <div class="mb-auto w-100" style="background-color: grey;">
+                        <img src="{{ asset('images/cards/aziz-chatuluka-tss.jpg') }}" class="img-fluid">
+                    </div>
+                    <div class="w-100 h-100" style="overflow: auto; background-color: grey;">
+                        {% for i in 1..100 %}
+                            {{ i }} chat message<br />
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

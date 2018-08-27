@@ -6,15 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/")
+ * @Route("/game")
  */
-class HomeController extends Controller
+class GameController extends Controller
 {
     /**
-     * @Route("", name="home.index")
+     * @Route("", name="game.index")
      */
     public function index()
     {
-        return $this->render('home/index.html.twig');
+        return $this->render('game/index.html.twig');
     }
 }
