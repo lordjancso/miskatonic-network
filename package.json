@@ -20,5 +20,8 @@
         "watch": "node_modules/.bin/encore dev --watch",
         "prod": "node_modules/.bin/encore production",
         "jscs": "jscs ./assets/js"
+    },
+    "dependencies": {
+        "vuedraggable": "^2.16.0"
     }
 }

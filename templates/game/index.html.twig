@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <main role="main" class="container-fluid p-0">
+    <main role="main" class="container-fluid p-0" id="app">
         <div class="d-flex h-100">
             <div class="col-sm-3 col-lg-2 p-0">
                 <div class="d-flex align-items-start flex-column h-100">
@@ -77,13 +77,16 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center w-100">
-                        <div class="d-flex justify-content-center flex-wrap" id="player-area">
-                            {% for i in 1..5 %}
-                                <div class="card card-active">
-                                    <img src="{{ asset('images/cards/cthuloid-spawn-som.jpg') }}" class="img-fluid">
-                                </div>
-                            {% endfor %}
-                        </div>
+                        <draggable class="d-flex justify-content-center flex-wrap"
+                                   id="player-area"
+                                   v-model="myArray"
+                                   :options="{group:'people'}"
+                                   @start="drag=true"
+                                   @end="drag=false">
+                            <div v-for="card in myArray" :key="card.name" class="card card-active">
+                                <img :src="card.src" class="img-fluid">
+                            </div>
+                        </draggable>
                     </div>
                 </div>
             </div>
